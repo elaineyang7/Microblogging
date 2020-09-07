@@ -1,0 +1,80 @@
+2020-09-01 15:01:52,744 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 11:50:04,878 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 12:07:57,985 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 12:14:50,262 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 12:17:18,425 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 12:48:00,998 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 12:53:02,698 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 13:09:59,100 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 13:11:13,970 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 13:15:27,686 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:36:33,011 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:36:43,022 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 102, in oauth_authorize
+    return oauth.authorize()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 64, in authorize
+    redirect_uri=self.get_callback_url())
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 32, in get_callback_url
+    return url_for('auth.oauth_callback', provider=self.provider_name,
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'auth.oauth_callback' with values ['provider']. Did you mean 'auth.callback' instead?
+2020-09-02 14:38:04,491 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:42:39,615 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:44:07,509 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:44:52,249 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 14:57:42,771 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 15:05:16,259 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-02 15:05:21,135 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 102, in oauth_authorize
+    return oauth.authorize()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 66, in authorize
+    redirect_uri=self.get_callback_url())
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 34, in get_callback_url
+    return url_for('auth.callback', provider=self.provider_name,
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'auth.callback' with values ['provider']. Did you mean 'auth.oauth_callback' instead?
+2020-09-02 15:08:16,835 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]

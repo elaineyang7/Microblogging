@@ -1,0 +1,64 @@
+2020-08-31 16:23:52,243 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 107, in oauth_authorize
+    oauth = OAuthSignIn.get_provider(provider)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 42, in get_provider
+    return self.providers[provider_name]
+KeyError: 'google'
+2020-08-31 16:28:49,523 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-08-31 16:28:52,466 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 97, in oauth_authorize
+    oauth = OAuthSignIn.get_provider(provider)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 40, in get_provider
+    provider = provider_class()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 49, in __init__
+    googleinfo = urllib2.urlopen('https://accounts.google.com/.well-known/openid-configuration')
+NameError: name 'urllib2' is not defined
+2020-08-31 16:34:06,234 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-08-31 16:34:08,946 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 97, in oauth_authorize
+    oauth = OAuthSignIn.get_provider(provider)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 41, in get_provider
+    provider = provider_class()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 50, in __init__
+    googleinfo = urllib2.urlopen('https://accounts.google.com/.well-known/openid-configuration')
+NameError: name 'urllib2' is not defined
+2020-08-31 16:36:24,949 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
