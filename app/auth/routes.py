@@ -34,8 +34,10 @@ def login():
             return redirect(url_for('auth.login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
+        print(user.password_hash)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.index')
+
         return redirect(next_page)
     return render_template('auth/login.html', title=_('Sign In'), form=form)
 
@@ -97,7 +99,7 @@ def reset_password(token):
 @bp.route('/authorize/<provider>')
 def oauth_authorize(provider):
     if not current_user.is_anonymous:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
     oauth = OAuthSignIn.get_provider(provider)
     return oauth.authorize()
 
@@ -105,16 +107,20 @@ def oauth_authorize(provider):
 @bp.route('/callback/<provider>')
 def oauth_callback(provider):
     if not current_user.is_anonymous:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
     oauth = OAuthSignIn.get_provider(provider)
-    social_id, username, email = oauth.callback()
+    #social_id, username, email = oauth.callback()
+    social_id, nickname, email = oauth.callback()
     if social_id is None:
         flash('Authentication failed.')
-        return redirect(url_for('index'))
-    user = User.query.filter_by(social_id=social_id).first()
+        return redirect(url_for('main.index'))
+    if nickname is None or nickname == "":
+            nickname = email.split('@')[0]
+    #user = User.query.filter_by(social_id=social_id).first()
+    user = User.query.filter_by(id=social_id).first()
     if not user:
-        user = User(social_id=social_id, nickname=username, email=email)
+        user = User(username=nickname, email=email)
         db.session.add(user)
         db.session.commit()
     login_user(user, True)
-    return redirect(url_for('index'))
+    return redirect(url_for('auth.login.html'))

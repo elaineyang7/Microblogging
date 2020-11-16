@@ -1,29 +1,4 @@
-2020-08-31 16:38:41,699 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1350, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1255, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1301, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1250, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1010, in _send_output
-    self.send(msg)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 950, in send
-    self.connect()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1424, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 500, in wrap_socket
-    return self.sslsocket_class._create(
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1040, in _create
-    self.do_handshake()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1309, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)
-
-During handling of the above exception, another exception occurred:
-
+2020-09-01 11:46:16,816 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -37,52 +12,32 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 97, in oauth_authorize
-    oauth = OAuthSignIn.get_provider(provider)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 40, in get_provider
-    provider = provider_class()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 49, in __init__
-    googleinfo = urllib.request.urlopen('https://accounts.google.com/.well-known/openid-configuration')
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 222, in urlopen
-    return opener.open(url, data, timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 525, in open
-    response = self._open(req, data)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 542, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 502, in _call_chain
-    result = func(*args)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1393, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1353, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)>
-2020-08-31 16:39:47,276 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
-2020-08-31 16:39:49,191 ERROR: Exception on /auth/authorize/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1350, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1255, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1301, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1250, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1010, in _send_output
-    self.send(msg)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 950, in send
-    self.connect()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1424, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 500, in wrap_socket
-    return self.sslsocket_class._create(
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1040, in _create
-    self.do_handshake()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1309, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 98, in oauth_authorize
+    return oauth.authorize()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 62, in authorize
+    redirect_uri=self.get_callback_url())
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 32, in get_callback_url
+    return url_for('http://localhost:5000/oauth2callback', provider=self.provider_name,
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'http://localhost:5000/oauth2callback' with values ['provider']. Did you mean 'auth.oauth_callback' instead?
+2020-09-01 11:49:40,300 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:10:33,996 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:12:34,620 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:12:52,110 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:13:27,335 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:14:14,712 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:14:50,226 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:38:27,355 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-01 13:38:30,967 ERROR: Exception on /auth/login [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -96,23 +51,25 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 97, in oauth_authorize
-    oauth = OAuthSignIn.get_provider(provider)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 40, in get_provider
-    provider = provider_class()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 49, in __init__
-    googleinfo = urllib.request.urlopen('https://accounts.google.com/.well-known/openid-configuration')
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 222, in urlopen
-    return opener.open(url, data, timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 525, in open
-    response = self._open(req, data)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 542, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 502, in _call_chain
-    result = func(*args)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1393, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1353, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)>
-2020-08-31 16:42:38,626 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 36, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/templates/auth/login.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/templates/base.html", line 10, in template
+    {% if title %}{{ title }} - Elaine's Microblog{% else %}{{ _('Welcome to Elaine's Microblog') }}{% endif %}
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 's'
+2020-09-01 13:39:55,292 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]

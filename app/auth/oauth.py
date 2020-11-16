@@ -47,7 +47,9 @@ class GoogleSignIn(OAuthSignIn):
     #openid_url = "https://accounts.google.com/.well-known/openid-configuration"
     def __init__(self):
         super(GoogleSignIn, self).__init__('google')
-        #self.openid_config = json.load(urlopen(self.openid_url))REDIRECT_URI
+        #googleinfo = urllib2.urlopen('https://accounts.google.com/.well-known/openid-configuration')
+        #google_params = json.load(googleinfo)
+        #self.openid_config = json.load(urlopen(self.openid_url))
         self.service = OAuth2Service(
             name='google',
             client_id=self.consumer_id,
@@ -55,6 +57,7 @@ class GoogleSignIn(OAuthSignIn):
             authorize_url='https://accounts.google.com/o/oauth2/auth',
             access_token_url='https://accounts.google.com/o/oauth2/token',
             base_url='https://www.googleapis.com/oauth2/v1/'
+            #userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo'
         )
 
     def authorize(self):
@@ -76,14 +79,11 @@ class GoogleSignIn(OAuthSignIn):
                   'redirect_uri': self.get_callback_url()},
             decoder=decode_json
         )
-        """me = oauth_session.get('me?fields=id,email').json()
-        return (
-            'google$' + me['id'],
-            me.get('email').split('@')[0],
-            me.get('email')
-        )"""
-        me = oauth_session.get('').json()
-        return (me['name'], me['email'])
+
+        #me = oauth_session.get('').json()
+        me = oauth_session.get('userinfo').json()
+        print(me)
+        return (me['id'], "", me['email'])
 
 class FacebookSignIn(OAuthSignIn):
     def __init__(self):
@@ -116,7 +116,9 @@ class FacebookSignIn(OAuthSignIn):
                   'redirect_uri': self.get_callback_url()},
             decoder=decode_json
         )
-        me = oauth_session.get('me?fields=id,email').json()
+        #me = oauth_session.get('me?fields=id,email').json()
+        me = oauth_session.get('/me?fields=id,name,email').json()
+        print(me)
         return (
             'facebook$' + me['id'],
             me.get('email').split('@')[0],  # Facebook does not provide

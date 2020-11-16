@@ -36,6 +36,7 @@ class Config(object):
     GOOGLE_OAUTH2_URL = 'https://accounts.google.com/o/oauth2/'
     GOOGLE_API_URL = 'https://www.googleapis.com/oauth2/v1/'
     GOOGLE_REDIRECT_URI = 'https://localhost:5000/gCallback'
+    GOOGLE_USERINFO_ENDPOINT = 'https://openidconnect.googleapis.com/v1/userinfo'
 
     OAUTH_CREDENTIALS={
             'google': {

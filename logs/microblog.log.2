@@ -1,4 +1,32 @@
-2020-09-02 15:08:34,079 ERROR: Exception on /auth/callback/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-09-03 14:59:50,343 ERROR: Exception on /auth/callback/facebook [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 108, in oauth_callback
+    return redirect(url_for('index'))
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2020-09-03 15:12:26,813 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-03 15:12:48,274 ERROR: Exception on /auth/callback/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +42,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 110, in oauth_callback
     social_id, username, email = oauth.callback()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 79, in callback
-    me = oauth_session.get('me?fields=id,email').json()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 85, in callback
+    me = oauth_session.get('').json()
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/requests/models.py", line 898, in json
     return complexjson.loads(self.text, **kwargs)
   File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
@@ -25,14 +53,16 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2020-09-02 15:09:57,227 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
-2020-09-02 15:10:08,774 ERROR: Exception on /auth/callback/facebook [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-09-03 15:29:40,672 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-03 15:29:50,759 ERROR: Exception on /auth/callback/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/base.py", line 406, in _entity_descriptor
-    return getattr(entity, key)
-AttributeError: type object 'User' has no attribute 'social_id'
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/rauth/service.py", line 21, in process_token_request
+    return tuple(data[key] for key in args)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/rauth/service.py", line 21, in <genexpr>
+    return tuple(data[key] for key in args)
+KeyError: 'access_token'
 
-The above exception was the direct cause of the following exception:
+During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
@@ -47,44 +77,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 114, in oauth_callback
-    user = User.query.filter_by(social_id=social_id).first()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 1902, in filter_by
-    clauses = [
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 1903, in <listcomp>
-    _entity_descriptor(zero, key) == value
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/base.py", line 408, in _entity_descriptor
-    util.raise_(
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity '<class 'app.models.User'>' has no property 'social_id'
-2020-09-03 14:58:09,296 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
-2020-09-03 14:58:41,976 ERROR: Exception on /auth/login [POST] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1948, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2242, in preprocess_request
-    rv = func()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/main/routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 306, in _get_current_object
-    return self.__local()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/models.py", line 138, in load_user
-    print(User.query.get())
-TypeError: get() missing 1 required positional argument: 'ident'
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/routes.py", line 110, in oauth_callback
+    social_id, username, email = oauth.callback()
+  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/auth/oauth.py", line 73, in callback
+    oauth_session = self.service.get_auth_session(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/rauth/service.py", line 556, in get_auth_session
+    session = self.get_session(self.get_access_token(method, **kwargs))
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/rauth/service.py", line 542, in get_access_token
+    access_token, = process_token_request(r, decoder, key)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/rauth/service.py", line 24, in process_token_request
+    raise KeyError(PROCESS_TOKEN_ERROR.format(key=bad_key, raw=r.content))
+KeyError: 'Decoder failed to handle access_token with data as returned by provider. A different decoder may be needed. Provider returned: b\'{\\n  "error": "invalid_grant",\\n  "error_description": "Bad Request"\\n}\''
+2020-09-03 15:30:37,661 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+2020-09-03 16:44:34,946 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/__init__.py:92]
+2020-09-03 16:46:21,122 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/__init__.py:92]
+2020-10-29 12:21:51,180 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/__init__.py:92]
+2020-10-29 12:32:27,874 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/__init__.py:92]
+2020-10-29 12:45:41,581 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/__init__.py:92]

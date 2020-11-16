@@ -1,4 +1,13 @@
-2020-09-03 14:58:53,381 ERROR: Exception on /auth/login [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-10-29 12:46:29,120 ERROR: Exception on /auth/callback/google [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,81 +17,55 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1948, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2242, in preprocess_request
-    rv = func()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/main/routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 306, in _get_current_object
-    return self.__local()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/models.py", line 138, in load_user
-    print(User.query.get())
-TypeError: get() missing 1 required positional argument: 'ident'
-2020-09-03 14:58:54,690 ERROR: Exception on /auth/callback/facebook [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1948, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2242, in preprocess_request
-    rv = func()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/main/routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 306, in _get_current_object
-    return self.__local()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/models.py", line 138, in load_user
-    print(User.query.get())
-TypeError: get() missing 1 required positional argument: 'ident'
-2020-09-03 14:58:56,336 ERROR: Exception on /auth/callback/facebook [GET] [in /Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1948, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 2242, in preprocess_request
-    rv = func()
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/main/routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/werkzeug/local.py", line 306, in _get_current_object
-    return self.__local()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/models.py", line 138, in load_user
-    print(User.query.get())
-TypeError: get() missing 1 required positional argument: 'ident'
-2020-09-03 14:59:35,747 INFO: Microblog startup [in /Users/elaineyang/Desktop/lamb_project/microblog_flask_OAuth2/app/__init__.py:92]
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/elaineyang/Desktop/lamb_project/elaine_microblog/elaine-microblog/app/auth/routes.py", line 124, in oauth_callback
+    db.session.commit()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+    self.transaction.commit()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+    self._flush(objects)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+    flush_context.execute()
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+    return meth(self, multiparams, params)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1127, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/elaineyang/Desktop/web_practice/microblog_flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (username, email, password_hash, about_me, last_seen) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('lsps9140720', 'lsps9140720@gmail.com', None, None, '2020-10-29 19:46:29.120097')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
